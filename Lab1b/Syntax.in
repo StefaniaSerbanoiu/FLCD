@@ -1,0 +1,24 @@
+program = "?" {stmt} "?"
+stmt = declaration_stmt | assignstmt | iostmt | ifstmt | whilestmt
+compstmt = "{" stmt {stmt} "}"
+
+declaration_stmt = arraydecl | simpledecl
+arraydecl = "array" type identifier "[" positive_int "]" ";"
+type = "int" | "string"
+simpledecl = type identifier ";"
+
+assignstmt = identifier "=" (expression | string) ";"
+
+expression = term ["+" | "-" | "*" | "/" | "%"] term | term
+term = identifier | int
+
+iostmt = ["read" | "write"] "(" identifier ")" ";" 
+ifstmt = "if" "(" cond ")"  compstmt  [ "else" compstmt ]
+whilestmt = "while" "(" cond ")"  compstmt
+
+cond = string_condition | int_condition
+string_condition = string_term string_relation string_term
+string_term = string | identifier
+int_condition = expression RELATION expression
+RELATION = "<" | "<=" | "==" | "!=" | ">=" | ">"
+string_relation = "==" | "!="
