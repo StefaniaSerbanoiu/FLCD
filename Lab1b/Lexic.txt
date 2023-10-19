@@ -1,0 +1,37 @@
+Alphabet:
+a. A-Z and a-z (from the English alphabet, both lowercase and uppercase)
+b. _ (underline)
+c. 0-9 (all digits)
+d. .
+
+
+Lexic:
+a.Special symbols, representing:
+1. operators 
++ - * / % > < <= >= != == =
+
+2.Separators:
+( ) [ ] { } ; space new_line end_of_line
+
+3.Reserved words:
+int string array read print while if else
+
+
+
+b.identifiers
+-> sequence of letter/letters and/or digit/digits, beginning with a letter and respecting the rules from below:
+
+identifier = letter | letter{letter|digit}
+letter = "a"|"b"|...|"z"|"A"|"B"|...|"Z"
+non_zero_digit = "1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9" 
+digit = "0" | non_zero_digit 
+
+
+
+c.constants
+1.integers:
+int = ["+" | "-"] non_zero_digit {digit} | "0" 
+positive_int = ["+"] non_zero_digit {digit}
+
+2.strings:
+string = """{letter|digit|"_"|"."}"""
