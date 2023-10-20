@@ -1,0 +1,24 @@
+Review of minilanguage
+
+
+Overview
+The language specified in EBNF seems to serve its purpose and be able to support multiple operations.
+The grammar has a good readability and is written in a way easy to understand.
+
+Lexic
+The lexic contains arithmetic, relational and assignment operators and a wide range of separators.
+There seem to be 3 simple data types, char, string and int, and a user defined type, an array.
+
+Syntax
+There are multiple types of statements defined: declaration, assignment, conditional(if), while, and i/o.
+The expression, condition and relation are also well-defined.
+The language also supports compound statements.
+
+Task requirements
+The requirements of the task seem to be respected(the language contains 2 simple data types and a user-defined type,statements,
+assignment, input/output, conditional, loop).
+The language has a correctly defined syntax and lexic.
+
+Possible improvements
+For a more complete language, more arithmetic operations or simple/user-defined types could be added.
+
