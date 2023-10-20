@@ -19,17 +19,17 @@ int string array read print while if else
 
 
 b.identifiers:
-identifier = letter | letter{letter|digit}.
-letter = "a"|"b"|...|"z"|"A"|"B"|...|"Z".
-non_zero_digit = "1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9".
-digit = "0" | non_zero_digit .
+identifier = letter | letter{letter|digit}
+letter = "a"|"b"|...|"z"|"A"|"B"|...|"Z"
+non_zero_digit = "1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"
+digit = "0" | non_zero_digit 
 
 
 
 c.constants:
 1.integers:
-int = ["+" | "-"] non_zero_digit {digit} | "0" .
-positive_int = ["+"] non_zero_digit {digit}.
+int = ["+" | "-"] non_zero_digit {digit} | "0" 
+positive_int = ["+"] non_zero_digit {digit}
 
 2.strings:
-string = """{letter|digit|"_"|"."}""".
+string = """{letter|digit|"_"|"."}"""
