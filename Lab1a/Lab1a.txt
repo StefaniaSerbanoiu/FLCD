@@ -1,0 +1,118 @@
+# function to find the minimum of 3 nrs
+# program 1
+?
+	int x1;
+	int x2;
+	int x3;
+	read(x1);
+	read(x2);
+	read(x3);
+	int minn;
+	minn = x1;
+	if(x2 < x1)
+	{
+		minn = x2;
+	}
+	if(x3 < minn)
+	{
+		minn = x3;
+	}
+	print(minn);
+?
+
+
+
+
+
+# program 2
+# function to check if an integer is prime 
+?
+	int result;
+	int x;
+	read(x);
+	if(x <= 1)
+	{
+		result = 0;
+	}
+	elif(x == 2)
+	{
+		result = 1;
+	}
+	elif(x % 2 == 0)
+	{
+		result = 0;
+	}
+	else
+	{
+		int div = 3;
+		int found = 0;
+		while(div < x)
+		{
+			if(x % div == 0)
+			{
+				result = 0;
+				found = 1;
+			}
+			div = div + 2;
+		}
+		if(found == 0)
+		{
+			result = 1;	
+		}
+	}
+	print(result);
+?
+
+
+
+
+
+# program 3
+# function to calculate product
+?
+	array int a[10];
+	int n;
+	int index;
+	index = 0;
+	read(n);
+	while(index < n)
+	{
+		read(a[index]);
+		index = index + 1;
+	}
+	int result;
+	result = 1;
+	
+	while(index < n)
+	{
+		result = result * array[index];
+		index = index + 1;
+	}
+	print(result);
+?
+
+
+
+
+
+# program with error ( the same as the first one with 2 lexical errors )
+# function with lexical errors
+?
+	int 0x1;
+	int x2;
+	int x3;
+	read(x1);
+	read(x2);@
+	read(x3);
+	int minn;
+	minn = x1;
+	if(x2 < x1)
+	{
+		minn = x2;
+	}
+	if(x3 < minn)
+	{
+		minn = x3;
+	}
+	print(minn);
+?
