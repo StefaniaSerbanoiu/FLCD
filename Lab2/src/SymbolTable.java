@@ -41,4 +41,10 @@ public class SymbolTable
     }
 
     public boolean exists(Object obj) { return symbol_table.exists(obj); }
+
+    @Override
+    public String toString()
+    {
+        return symbol_table.toString();
+    }
 }

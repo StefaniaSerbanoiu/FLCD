@@ -21,5 +21,7 @@ public class Main
         my_symbol_table.remove(1);
         System.out.println(my_symbol_table.getValueForKey(1) + " " + my_symbol_table.getValueForKey(15));
 
+        // string form of symbol table
+        System.out.println(my_symbol_table);
     }
 }
