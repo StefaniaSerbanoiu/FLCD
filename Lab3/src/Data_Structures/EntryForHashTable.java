@@ -10,4 +10,8 @@ public class EntryForHashTable<K, V>
         this.key = new_key;
         this.value = new_value;
     }
+
+    public V getValue() { return value; }
+
+    public K getKey() { return key; }
 }

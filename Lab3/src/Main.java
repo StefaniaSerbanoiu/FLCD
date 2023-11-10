@@ -1,18 +1,40 @@
-import Data_Structures.HashTable;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        SymbolTable my_symbol_table = new SymbolTable(5);
-        my_symbol_table.insert(1, 16);
-        my_symbol_table.insert(15, 200);
-        my_symbol_table.insert(489, "a=");
-        my_symbol_table.insert(20, "gfsjdjdfs");
-        my_symbol_table.remove(1);
-        System.out.println(my_symbol_table.getValueForKey(1) + " " + my_symbol_table.getValueForKey(15));
+        String p1 = "p1.txt";
+        String p2 = "p2.txt";
+        String p3 = "p1.txt";
+        String p_err = "programWithErrors.txt";
+        ProgramInternalForm pif = new ProgramInternalForm();
+        Scanner scanner = new Scanner(p1, 20);
+        scanner.scan();
+        //System.out.println(scanner.getSymbol_table().toString());
+        //System.out.println(scanner.getProgramInternalForm().toString());
 
-        // string form of symbol table
-        System.out.println(my_symbol_table);
+        // get the files with the content of pif and st
+        try {
+            // folder path
+            String outputFolderPath = "Lab3/src/Output/";
+
+            // st.out
+            PrintStream stOut = new PrintStream(new FileOutputStream(outputFolderPath + "ST.out"));
+            System.setOut(stOut);
+            System.out.println(scanner.getSymbol_table().toString());
+            stOut.close();
+
+            // PIF.out
+            PrintStream pifOut = new PrintStream(new FileOutputStream(outputFolderPath + "PIF.out"));
+            System.setOut(pifOut);
+            System.out.println(scanner.getProgramInternalForm().toString());
+            pifOut.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }

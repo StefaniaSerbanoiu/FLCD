@@ -1,7 +1,9 @@
 package Data_Structures;
+import java.util.Arrays;
 import java.util.LinkedList;
 
-public class HashTable<K, V> {
+public class HashTable<K, V>
+{
     private static final int table_capacity = 100; // the default table will have 100 entries
     private LinkedList<EntryForHashTable<K, V>>[] table;
 
@@ -18,18 +20,30 @@ public class HashTable<K, V> {
 
     public int getTableLength() { return table.length; }
 
-    public boolean exists(V value) // if a value is found
+    /*
+    search function
+    searches for a given value in the hash table
+    returns 1, otherwise -1
+     */
+    public int find(V value)
     {
         int length = table.length;
-        // checkin every elem of the table
-        for (LinkedList<EntryForHashTable<K, V>> entryForHashTables : table)
+
+        for (int i = 0; i < length; i++)
         {
-            if (entryForHashTables == value)
+            LinkedList<EntryForHashTable<K, V>> elems = table[i];
+            if (elems != null)
             {
-                return true;
+                for (EntryForHashTable<K, V> entry : elems)
+                {
+                    if (entry.value.equals(value))
+                    {
+                        return 1;
+                    }
+                }
             }
         }
-        return false;
+        return -1;
     }
 
     public V getValueForKey(K key)
@@ -51,6 +65,28 @@ public class HashTable<K, V> {
 
         return null; // Key not found or there is not any element at that position
     }
+
+    public K getKeyForValue(V value)  // Return the key for the given value
+    {
+        int length = table.length;
+        for (int row = 0; row < length; row++)
+        {
+            LinkedList<EntryForHashTable<K, V>> elems = table[row];
+            if (elems != null)
+            {
+                for (EntryForHashTable<K, V> entry : elems)
+                {
+                    if (entry.value.equals(value))
+                    {
+                        return entry.key;
+                    }
+                }
+            }
+        }
+        return null; // If value is not found, return null
+    }
+
+
 
     public void insert(K key, V value) // adding a new value with a given key
     {
