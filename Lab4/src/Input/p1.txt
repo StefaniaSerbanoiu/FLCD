@@ -1,0 +1,19 @@
+?
+	int x1;
+	int x2;
+	int x3;
+	read(x1);
+	read(x2);
+	read(x3);
+	int minn;
+	minn = x1;
+	if(x2 < x1)
+	{
+		minn = x2;
+	}
+	if(x3 < minn)
+	{
+		minn = x3;
+	}
+	print(minn);
+?

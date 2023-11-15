@@ -1,0 +1,21 @@
+?
+	array int a[10];
+	int n;
+	int index;
+	index = 0;
+	read(n);
+	while(index < n)
+	{
+		read(a[index]);
+		index = index + 1;
+	}
+	int result;
+	result = 1;
+	
+	while(index < n)
+	{
+		result = result * array[index];
+		index = index + 1;
+	}
+	print(result);
+?
