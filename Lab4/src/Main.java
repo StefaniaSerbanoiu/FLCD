@@ -9,6 +9,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+        /*
         String p1 = "p1.txt";
         String p2 = "p2.txt";
         String p3 = "p1.txt";
@@ -40,5 +41,10 @@ public class Main
         {
             e.printStackTrace();
         }
+
+         */
+
+        FiniteAutomata finiteAutomata = new FiniteAutomata("FA.in");
+        finiteAutomata.menu();
     }
 }
