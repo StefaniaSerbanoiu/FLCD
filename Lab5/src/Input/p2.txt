@@ -1,0 +1,36 @@
+?
+	int result;
+	int x;
+	read(x);
+	if(x <= 1)
+	{
+		result = 0;
+	}
+	elif(x == 2)
+	{
+		result = 1;
+	}
+	elif(x % 2 == 0)
+	{
+		result = 0;
+	}
+	else
+	{
+		int div = 3;
+		int found = 0;
+		while(div < x)
+		{
+			if(x % div == 0)
+			{
+				result = 0;
+				found = 1;
+			}
+			div = div + 2;
+		}
+		if(found == 0)
+		{
+			result = 1;	
+		}
+	}
+	print(result);
+?
