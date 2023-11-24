@@ -1,10 +1,7 @@
 package Lab4.src;
 
-import Lab4.src.Data_Structures.EntryForProgramInternalForm;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class ProgramInternalForm
 {

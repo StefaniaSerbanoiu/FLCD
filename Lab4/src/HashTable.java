@@ -1,13 +1,14 @@
-package Lab4.src.Data_Structures;
+package Lab4.src;
 
 
-import java.util.Arrays;
+import Lab4.src.Entry;
+
 import java.util.LinkedList;
 
 public class HashTable<K, V>
 {
     private static final int table_capacity = 100; // the default table will have 100 entries
-    private LinkedList<EntryForHashTable<K, V>>[] table;
+    private LinkedList<Entry<K, V>>[] table;
 
     //constructors
     public HashTable() { table = new LinkedList[table_capacity]; }
@@ -33,10 +34,10 @@ public class HashTable<K, V>
 
         for (int i = 0; i < length; i++)
         {
-            LinkedList<EntryForHashTable<K, V>> elems = table[i];
+            LinkedList<Entry<K, V>> elems = table[i];
             if (elems != null)
             {
-                for (EntryForHashTable<K, V> entry : elems)
+                for (Entry<K, V> entry : elems)
                 {
                     if (entry.value.equals(value))
                     {
@@ -51,12 +52,12 @@ public class HashTable<K, V>
     public V getValueForKey(K key)
     {
         int index = getIndexForKey(key); // calculated via the hash built-in function
-        LinkedList<EntryForHashTable<K, V>> elems = table[index]; // getting the elem/elements from the position
+        LinkedList<Entry<K, V>> elems = table[index]; // getting the elem/elements from the position
 
         if (elems != null) // if there is an actual element for that key
                            // we check every element found at that position ( in the specific linked list for that position )
         {
-            for (EntryForHashTable<K, V> entry : elems) // taking every element from the linked list
+            for (Entry<K, V> entry : elems) // taking every element from the linked list
             {
                 if (entry.key.equals(key)) // we check if for an elem from the list the key is the same as our param
                 {
@@ -73,10 +74,10 @@ public class HashTable<K, V>
         int length = table.length;
         for (int row = 0; row < length; row++)
         {
-            LinkedList<EntryForHashTable<K, V>> elems = table[row];
+            LinkedList<Entry<K, V>> elems = table[row];
             if (elems != null)
             {
-                for (EntryForHashTable<K, V> entry : elems)
+                for (Entry<K, V> entry : elems)
                 {
                     if (entry.value.equals(value))
                     {
@@ -95,10 +96,10 @@ public class HashTable<K, V>
         int index = getIndexForKey(key); // calculating the pos
         if (table[index] == null) // if there hasn't been created a list for that position, we ll create it
         {
-            table[index] = new LinkedList<EntryForHashTable<K, V>>();
+            table[index] = new LinkedList<Entry<K, V>>();
         }
 
-        for (EntryForHashTable<K, V> entry : table[index]) // if for that list there is another element with the same key we update with new val
+        for (Entry<K, V> entry : table[index]) // if for that list there is another element with the same key we update with new val
         {
             if (entry.key.equals(key))
             {
@@ -107,18 +108,18 @@ public class HashTable<K, V>
             }
         }
 
-        table[index].add(new EntryForHashTable<K, V>(key, value)); // finally adding a new entry
+        table[index].add(new Entry<K, V>(key, value)); // finally adding a new entry
     }
 
 
     public void remove(K key) // removing the values associated to a given key
     {
         int index = getIndexForKey(key); // finding where the key is in the table
-        LinkedList<EntryForHashTable<K, V>> elems = table[index]; // getting the elem/elems, in a linked list
+        LinkedList<Entry<K, V>> elems = table[index]; // getting the elem/elems, in a linked list
 
         if (elems != null) // if there is anything at that position
         {
-            for (EntryForHashTable<K, V> entry : elems) // there could be multiple elements in the list
+            for (Entry<K, V> entry : elems) // there could be multiple elements in the list
             {
                 if (entry.key.equals(key)) // so then we check by key
                 {
@@ -134,11 +135,11 @@ public class HashTable<K, V>
         StringBuilder finalString = new StringBuilder();
         finalString.append("Symbol Table:\n{\n");
 
-        for (LinkedList<EntryForHashTable<K, V>> elems : table)
+        for (LinkedList<Entry<K, V>> elems : table)
         {
             if (elems != null)
             {
-                for (EntryForHashTable<K, V> entry : elems)
+                for (Entry<K, V> entry : elems)
                 {
                     finalString.append("  Key: ").append(entry.key).append(", Value: ").append(entry.value).append("\n");
                 }

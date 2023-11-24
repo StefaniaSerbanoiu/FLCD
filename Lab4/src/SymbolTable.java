@@ -1,6 +1,6 @@
 package Lab4.src;
 
-import Lab3.src.Data_Structures.HashTable;
+import Lab4.src.HashTable;
 
 public class SymbolTable
 {

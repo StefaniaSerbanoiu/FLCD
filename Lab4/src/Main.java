@@ -1,9 +1,4 @@
 package Lab4.src;
-import Lab3.src.ProgramInternalForm;
-import Lab3.src.Scanner;
-
-import java.io.FileOutputStream;
-import java.io.PrintStream;
 
 public class Main
 {
@@ -45,6 +40,8 @@ public class Main
          */
 
         FiniteAutomata finiteAutomata = new FiniteAutomata("FA.in");
+        //finiteAutomata.isSequenceAccepted("12");
         finiteAutomata.menu();
+
     }
 }

@@ -1,7 +1,7 @@
 package Lab4.src;
-import Lab3.src.Data_Structures.EntryForProgramInternalForm;
-import Lab3.src.ProgramInternalForm;
-import Lab3.src.SymbolTable;
+import Lab4.src.EntryForProgramInternalForm;
+import Lab4.src.ProgramInternalForm;
+import Lab4.src.SymbolTable;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -142,6 +142,7 @@ public class Scanner
                 }
                 else
                 {
+                    // check integer constant or string constant
                     if (this.isIntegerConstant(token) || this.isStringConstant(token))
                     {
                         int position = symbol_table.position(token);

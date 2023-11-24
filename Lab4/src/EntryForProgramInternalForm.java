@@ -1,4 +1,4 @@
-package Lab4.src.Data_Structures;
+package Lab4.src;
 
 public class EntryForProgramInternalForm<String, Integer>
 {
