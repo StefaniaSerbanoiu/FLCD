@@ -112,7 +112,7 @@ public class FiniteAutomata {
 
     private void read(String filePath)
     {
-        try (java.util.Scanner scanner = new java.util.Scanner(new File(filePath))) //TODO
+        try (java.util.Scanner scanner = new java.util.Scanner(new File(filePath)))
         {
             String line = scanner.nextLine();
             this.states = new ArrayList<>(List.of(line.split(",")));
