@@ -8,7 +8,7 @@ import java.util.*;
 public class FiniteAutomata {
     private List<String> states;
     private List<String> alphabet;
-    private Map<Lab4.src.Entry<String, String>, Set<String>> transitions; // pair of 2 strings associated to a set of strings
+    private Map<Entry<String, String>, Set<String>> transitions; // pair of 2 strings associated to a set of strings
                                 // as value, a set is used to permit both FA's and DFA's
     private String initial_state;
     private List<String> final_states;
@@ -17,7 +17,7 @@ public class FiniteAutomata {
     public FiniteAutomata(String filename)
     {
         this.transitions = new HashMap<>(); // associate a pair with something from the alphabet
-        this.read("Lab4/src/Input/" + filename);
+        this.read("Lab5/src/Input/" + filename);
     }
 
     public List<String> getStates() {
@@ -36,7 +36,7 @@ public class FiniteAutomata {
         return alphabet;
     }
 
-    public Map<Lab4.src.Entry<String, String>, Set<String>> getTransitions() {
+    public Map<Entry<String, String>, Set<String>> getTransitions() {
         return transitions;
     }
     public boolean isDFA()
@@ -132,7 +132,7 @@ public class FiniteAutomata {
 
                 if (this.alphabet.contains(transition[1]))
                 {
-                    transitions.put(new Lab4.src.Entry<String, String>(transition[0], transition[1]), Collections.singleton(transition[2]));
+                    transitions.put(new Entry<String, String>(transition[0], transition[1]), Collections.singleton(transition[2]));
                 }
             }
         }

@@ -36,7 +36,7 @@ public class Scanner
 
     private String readFile() throws IOException // reads the file and returns a string with the program from it, or throws an exception
     {
-        String full_path = "Lab3/src/Input/" + filename;
+        String full_path = "Lab5/src/Input/" + filename;
         Path path = Paths.get(full_path); // get the path to the file
         return new String(Files.readAllBytes(path));
     }
